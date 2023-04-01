@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float translateSpeed;
     [SerializeField] private float rotationSpeed;
 
+    private Vector3 velocity = Vector3.zero;
+
     private void FixedUpdate()
     {
         HandleTranslation();
@@ -18,7 +20,8 @@ public class CameraFollow : MonoBehaviour
     private void HandleTranslation()
     {
         var targetPosition = target.TransformPoint(offset);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, translateSpeed * Time.deltaTime);
     }
     private void HandleRotation()
     {
