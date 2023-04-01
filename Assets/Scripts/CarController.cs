@@ -12,6 +12,7 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
+    private bool isReset;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -27,12 +28,19 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform rearLeftWheelTransform;
     [SerializeField] private Transform rearRightWheelTransform;
 
+    [SerializeField] private Transform carTransform;
+
     private void FixedUpdate()
     {
         GetInput();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+
+        if (isReset)
+        {
+            carTransform.rotation = Quaternion.identity;
+        }
     }
 
 
@@ -41,6 +49,7 @@ public class CarController : MonoBehaviour
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
+        isReset = Input.GetKey(KeyCode.R);
     }
 
     private void HandleMotor()
@@ -77,8 +86,8 @@ public class CarController : MonoBehaviour
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         Vector3 pos;
-        Quaternion rot
-; wheelCollider.GetWorldPose(out pos, out rot);
+        Quaternion rot;
+        wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     }
