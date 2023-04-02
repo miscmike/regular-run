@@ -30,6 +30,10 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private Transform carTransform;
 
+    [SerializeField] private Rigidbody carRigidbody;
+
+
+
     private void FixedUpdate()
     {
         GetInput();
@@ -40,8 +44,12 @@ public class CarController : MonoBehaviour
         if (isReset)
         {
             carTransform.rotation = Quaternion.identity;
+            carTransform.position = Vector3.zero;
         }
     }
+
+       
+
 
 
     private void GetInput()
@@ -56,16 +64,18 @@ public class CarController : MonoBehaviour
     {
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        rearLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        rearRightWheelCollider.motorTorque = verticalInput * motorForce;
+        //rearLeftWheelCollider.motorTorque = verticalInput * motorForce;
+        //rearRightWheelCollider.motorTorque = verticalInput * motorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
     }
 
     private void ApplyBreaking()
     {
-        frontRightWheelCollider.brakeTorque = currentbreakForce;
-        frontLeftWheelCollider.brakeTorque = currentbreakForce;
+
+
+        frontRightWheelCollider.brakeTorque = currentbreakForce*carRigidbody.velocity.magnitude;
+        frontLeftWheelCollider.brakeTorque = currentbreakForce * carRigidbody.velocity.magnitude;
         rearLeftWheelCollider.brakeTorque = currentbreakForce;
         rearRightWheelCollider.brakeTorque = currentbreakForce;
     }
