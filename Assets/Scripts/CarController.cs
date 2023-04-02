@@ -16,6 +16,8 @@ public class CarController : MonoBehaviour
     private bool isReset;
     private float dragCoefficient;
     private float scaledMotorForce;
+    public static CarController cc;
+    public float carCurrentSpeed;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -34,9 +36,12 @@ public class CarController : MonoBehaviour
 
     [SerializeField] private Transform carTransform;
 
-    [SerializeField] private Rigidbody carRigidbody;
+    [SerializeField] public Rigidbody carRigidbody;
 
-
+    private void Start()
+    {
+        cc = this;
+    }
 
     private void FixedUpdate()
     {
@@ -50,6 +55,8 @@ public class CarController : MonoBehaviour
             carTransform.rotation = Quaternion.identity;
             carTransform.position = Vector3.zero;
         }
+
+        carCurrentSpeed = (carRigidbody.velocity.magnitude);
     }
 
        
@@ -105,6 +112,7 @@ public class CarController : MonoBehaviour
 
 
     }
+
 
     private void HandleSteering()
     {
