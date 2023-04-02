@@ -976,7 +976,6 @@ GameObject:
   - component: {fileID: 299531825}
   - component: {fileID: 299531828}
   - component: {fileID: 299531827}
-  - component: {fileID: 299531826}
   m_Layer: 0
   m_Name: rear_axle
   m_TagString: Untagged
@@ -999,27 +998,6 @@ Transform:
   m_Father: {fileID: 1774583718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &299531826
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299531824}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1.1917288, y: 0.1391364, z: 0.14629668}
-  m_Center: {x: 0.0012095273, y: 0, z: 0.0000008530915}
 --- !u!23 &299531827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1095,7 +1073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305596160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.723, y: 0.501, z: 1.126}
+  m_LocalPosition: {x: -0.73399997, y: 0.501, z: 1.126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,7 +1103,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 0.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2141,7 +2119,6 @@ GameObject:
   - component: {fileID: 826081503}
   - component: {fileID: 826081506}
   - component: {fileID: 826081505}
-  - component: {fileID: 826081504}
   m_Layer: 0
   m_Name: rear_left_wheel
   m_TagString: Untagged
@@ -2164,27 +2141,6 @@ Transform:
   m_Father: {fileID: 1774583718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &826081504
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826081502}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.27734157, y: 0.6829339, z: 0.71807885}
-  m_Center: {x: -0.08012353, y: 0, z: -0.0000004917383}
 --- !u!23 &826081505
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2579,7 +2535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058915036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.686, y: 0.49, z: 1.117}
+  m_LocalPosition: {x: 0.679, y: 0.49, z: 1.117}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2609,7 +2565,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 0.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -3194,7 +3150,6 @@ GameObject:
   - component: {fileID: 1290621301}
   - component: {fileID: 1290621304}
   - component: {fileID: 1290621303}
-  - component: {fileID: 1290621302}
   m_Layer: 0
   m_Name: rear_right_wheel
   m_TagString: Untagged
@@ -3217,27 +3172,6 @@ Transform:
   m_Father: {fileID: 1774583718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1290621302
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290621300}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.27734157, y: 0.6829339, z: 0.71807885}
-  m_Center: {x: 0.08012353, y: 0, z: -0.0000004917383}
 --- !u!23 &1290621303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3555,7 +3489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466027159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.724, y: 0.496, z: -1.452}
+  m_LocalPosition: {x: -0.729, y: 0.496, z: -1.452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3585,7 +3519,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 0.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -4021,6 +3955,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543846428}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1601445593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601445594}
+  m_Layer: 0
+  m_Name: Poison
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601445594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601445593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631561105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,7 +4293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781310717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.682, y: 0.496, z: -1.452}
+  m_LocalPosition: {x: 0.675, y: 0.496, z: -1.452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4358,7 +4323,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 0.5
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -4689,7 +4654,6 @@ GameObject:
   - component: {fileID: 3966270785420215410}
   - component: {fileID: 3361485221561833717}
   - component: {fileID: 1472244606769009002}
-  - component: {fileID: 8798416735115534664}
   m_Layer: 0
   m_Name: front_axle
   m_TagString: Untagged
@@ -4705,27 +4669,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3203659299374755005}
   m_Mesh: {fileID: 8304690528283417371, guid: 696450771374c453e9722c66fd6b182f, type: 3}
---- !u!65 &3456899798123628262
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258331979124715447}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.27734157, y: 0.6829339, z: 0.71807885}
-  m_Center: {x: -0.08012353, y: 0, z: -0.0000004917383}
 --- !u!4 &3551566918355341434
 Transform:
   m_ObjectHideFlags: 0
@@ -4901,7 +4844,6 @@ GameObject:
   - component: {fileID: 3551566918355341434}
   - component: {fileID: 5337368122919357693}
   - component: {fileID: 7022138662600734614}
-  - component: {fileID: 3456899798123628262}
   m_Layer: 0
   m_Name: front_left_wheel
   m_TagString: Untagged
@@ -4968,7 +4910,7 @@ Rigidbody:
   m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0, y: -0.5, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -4977,7 +4919,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -5007,27 +4949,7 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 2549569383178137970}
   rearLeftWheelTransform: {fileID: 826081503}
   rearRightWheelTransform: {fileID: 1290621301}
---- !u!65 &6147737860538102088
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9098679985597304776}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.27734157, y: 0.6829339, z: 0.71807885}
-  m_Center: {x: 0.08012353, y: 0, z: -0.0000004917383}
+  carTransform: {fileID: 5112151736207227008}
 --- !u!23 &7022138662600734614
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5070,27 +4992,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8798416735115534664
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3203659299374755005}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1.1917288, y: 0.1391364, z: 0.14629668}
-  m_Center: {x: 0.0012095273, y: 0, z: 0.0000008530915}
 --- !u!1 &9098679985597304776
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,7 +5003,6 @@ GameObject:
   - component: {fileID: 2549569383178137970}
   - component: {fileID: 127577269825538894}
   - component: {fileID: 3709573874079429089}
-  - component: {fileID: 6147737860538102088}
   m_Layer: 0
   m_Name: front_right_wheel
   m_TagString: Untagged
