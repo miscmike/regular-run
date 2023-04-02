@@ -6,7 +6,7 @@ public class Reset : MonoBehaviour
 {
     public GameObject car;
     public Rigidbody carRB;
-
+    public AudioSource flameDeath;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +17,7 @@ public class Reset : MonoBehaviour
 
             carRB.velocity = Vector3.zero;
             carRB.rotation = Quaternion.identity;
+            flameDeath.Play();
         }
         
 
