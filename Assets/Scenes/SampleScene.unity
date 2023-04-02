@@ -6613,16 +6613,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 100
+    m_AsymptoteSlip: 0.3
     m_AsymptoteValue: 0.5
     m_Stiffness: 0.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.001
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -21480,19 +21480,19 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 200
+  m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 100
+    m_AsymptoteSlip: 0.3
     m_AsymptoteValue: 0.5
     m_Stiffness: 0.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.001
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -23945,16 +23945,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 100
+    m_AsymptoteSlip: 0.3
     m_AsymptoteValue: 0.5
     m_Stiffness: 0.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.001
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -36693,16 +36693,16 @@ WheelCollider:
   m_Mass: 20
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
+    m_ExtremumSlip: 0.2
+    m_ExtremumValue: 100
+    m_AsymptoteSlip: 0.3
     m_AsymptoteValue: 0.5
     m_Stiffness: 0.5
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.001
+    m_ExtremumValue: 2
+    m_AsymptoteSlip: 0.001
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_IncludeLayers:
     serializedVersion: 2
@@ -43533,6 +43533,8 @@ GameObject:
   - component: {fileID: 5600738816818635324}
   - component: {fileID: 5600738816818635323}
   - component: {fileID: 5600738816818635325}
+  - component: {fileID: 5600738816818635326}
+  - component: {fileID: 5600738816818635327}
   m_Layer: 0
   m_Name: car
   m_TagString: Car
@@ -43600,9 +43602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108dbea548fa540c487d877a4bd4aba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 300000
-  breakForce: 1000
-  maxSteerAngle: 30
+  motorForce: 3000
+  breakForce: 10000
+  maxSteerAngle: 20
   frontLeftWheelCollider: {fileID: 305596162}
   frontRightWheelCollider: {fileID: 1058915038}
   rearLeftWheelCollider: {fileID: 1466027161}
@@ -43612,6 +43614,116 @@ MonoBehaviour:
   rearLeftWheelTransform: {fileID: 826081503}
   rearRightWheelTransform: {fileID: 1290621301}
   carTransform: {fileID: 5112151736207227008}
+  carRigidbody: {fileID: 5600738816818635324}
+--- !u!82 &5600738816818635326
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600738816818635322}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c502041826854664683f9914f63427b0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5600738816818635327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5600738816818635322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14683b55b11926245aeb885f2646e2e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPitch: 1
 --- !u!23 &7022138662600734614
 MeshRenderer:
   m_ObjectHideFlags: 0

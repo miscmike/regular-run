@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,13 @@ public class CarController : MonoBehaviour
     private float currentbreakForce;
     private bool isBreaking;
     private bool isReset;
+    private float dragCoefficient;
+    private float scaledMotorForce;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+    
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -55,29 +59,51 @@ public class CarController : MonoBehaviour
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
-        verticalInput = Input.GetAxis(VERTICAL);
+        //verticalInput = Input.GetAxis(VERTICAL);
+
+      
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            verticalInput = 2;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            verticalInput = -2;
+        }
+
+
+
         isBreaking = Input.GetKey(KeyCode.Space);
         isReset = Input.GetKey(KeyCode.R);
+
+       // dragCoefficient = carRigidbody.velocity.magnitude/1000000;
+
+        Debug.Log(carRigidbody.velocity.magnitude);
+
+        scaledMotorForce = motorForce * Math.Min(100, 100/carRigidbody.velocity.magnitude);
     }
 
     private void HandleMotor()
     {
-        frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        //rearLeftWheelCollider.motorTorque = verticalInput * motorForce;
-        //rearRightWheelCollider.motorTorque = verticalInput * motorForce;
+        frontLeftWheelCollider.motorTorque = verticalInput * scaledMotorForce;
+        frontRightWheelCollider.motorTorque = verticalInput * scaledMotorForce;
+        rearLeftWheelCollider.motorTorque = verticalInput * scaledMotorForce;
+        rearRightWheelCollider.motorTorque = verticalInput * scaledMotorForce;
         currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
     }
 
     private void ApplyBreaking()
     {
+        
+
+        frontRightWheelCollider.brakeTorque = currentbreakForce * Math.Max(10*carRigidbody.velocity.magnitude-1, 1);
+        frontLeftWheelCollider.brakeTorque = currentbreakForce * Math.Max(10*carRigidbody.velocity.magnitude - 1, 1);
+        rearLeftWheelCollider.brakeTorque = currentbreakForce * Math.Max(10*carRigidbody.velocity.magnitude - 1, 1);
+        rearRightWheelCollider.brakeTorque = currentbreakForce * Math.Max(10*carRigidbody.velocity.magnitude - 1, 1);
 
 
-        frontRightWheelCollider.brakeTorque = currentbreakForce*carRigidbody.velocity.magnitude;
-        frontLeftWheelCollider.brakeTorque = currentbreakForce * carRigidbody.velocity.magnitude;
-        rearLeftWheelCollider.brakeTorque = currentbreakForce;
-        rearRightWheelCollider.brakeTorque = currentbreakForce;
     }
 
     private void HandleSteering()
