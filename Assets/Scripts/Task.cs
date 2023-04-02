@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Task : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI success;
+    private bool hasWon = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("milk delivered");
+        if (!hasWon)
+        {
+            hasWon = !hasWon;
+            success.enabled = !success.enabled;
+        }
+        
+
     }
 }

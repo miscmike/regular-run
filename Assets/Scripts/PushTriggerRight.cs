@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushTrigger : MonoBehaviour
+public class PushTriggerRight : MonoBehaviour
 {
 
     public Rigidbody tower;
@@ -15,7 +15,7 @@ public class PushTrigger : MonoBehaviour
     {
         if (other.tag == "Car" && standing)
         {
-            tower.AddForce(Vector3.left * pushForce);
+            tower.AddForce(Vector3.right * pushForce);
             standing = !standing;
         }
     }
