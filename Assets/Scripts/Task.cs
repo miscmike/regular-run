@@ -5,7 +5,7 @@ using TMPro;
 
 public class Task : MonoBehaviour
 {
-    public TextMeshProUGUI success;
+    public GameObject success;
     private bool hasWon = false;
 
     private void OnTriggerEnter(Collider other)
@@ -13,7 +13,7 @@ public class Task : MonoBehaviour
         if (!hasWon)
         {
             hasWon = !hasWon;
-            success.enabled = !success.enabled;
+            success.SetActive(true);
         }
         
 
