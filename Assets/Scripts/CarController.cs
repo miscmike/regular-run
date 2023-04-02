@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CarController : MonoBehaviour
 {
@@ -47,8 +48,7 @@ public class CarController : MonoBehaviour
 
         if (isReset)
         {
-            carTransform.rotation = Quaternion.identity;
-            carTransform.position = Vector3.zero;
+            SceneManager.LoadScene("SampleScene");
         }
     }
 
@@ -59,27 +59,34 @@ public class CarController : MonoBehaviour
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
-        //verticalInput = Input.GetAxis(VERTICAL);
+        verticalInput = Input.GetAxis(VERTICAL);
 
       
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            verticalInput = 2;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            verticalInput = -2;
-        }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    verticalInput = 2;
+        //    Debug.Log("W");
+        //}
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    verticalInput = -2;
+        //    Debug.Log("S");
+        //} else
+        //{ 
+        //    verticalInput = 0;
+        //}
+        
 
 
 
         isBreaking = Input.GetKey(KeyCode.Space);
         isReset = Input.GetKey(KeyCode.R);
 
-       // dragCoefficient = carRigidbody.velocity.magnitude/1000000;
+        // dragCoefficient = carRigidbody.velocity.magnitude/1000000;
 
-        Debug.Log(carRigidbody.velocity.magnitude);
+        //Debug.Log(carRigidbody.velocity.magnitude);
+        Debug.Log(verticalInput);
 
         scaledMotorForce = motorForce * Math.Min(100, 100/carRigidbody.velocity.magnitude);
     }
